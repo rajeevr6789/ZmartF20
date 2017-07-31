@@ -7,3 +7,4 @@ Intel Chipset C612 or above
 https://github.com/rajeevr6789/ZmartF20.git
 
 ftutu
+deepak
