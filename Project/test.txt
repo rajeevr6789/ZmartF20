@@ -5,3 +5,5 @@ Intel Chipset C612 or above
 (32 x 4) 128 GB memory DDR4, registered, ECC, 2400 MHz, or above RDIMM using 32GB DIMMS. Scalable to 1536 GB. 24 DIMM Slots should be provided for scalability.
 8886001858
 https://github.com/rajeevr6789/ZmartF20.git
+
+ftutu
