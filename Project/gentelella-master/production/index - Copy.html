@@ -10,10 +10,7 @@
     <title>Smart Dashboard! | </title>
 
     <!-- Bootstrap -->
-	<link href="../vendors/small_box/AdminLTE.css" rel="stylesheet">
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	
-	
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -280,72 +277,40 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
-		<!--Small box colored status-->
-		<div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h4>Process Design and Simulation</h4>
-			  <h1>Completed</h1>
+          <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i>Process Design and Simulation</span>
+              <div class="count">Completed</div>
+              <span class="count_bottom"><i class="green"> </i></span>
             </div>
-            <div class="icon">
-              <i class="ion ion-user"></i>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i> 3D Printing</span>
+              <div class="count">OnGoing</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i></span>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Molding Status</span>
+              <div class="count green">OnGoing</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i></i> </span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Melting Status</span>
+              <div class="count">Completed</div>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i></i></span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Casting Status</span>
+              <div class="count">OnGoing</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i> </span>
+            </div>
+            <!-- <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total </span>
+              <div class="count">7,325</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+            </div> -->
           </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h4>3D Printing</h4>
-			  <h1>OnGoing</h1>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-             <h4>Molding Status</h4>
-			  <h1>OnGoing</h1>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h4>Melting Status</h4>
+          <!-- /top tiles -->
 
-              <h1>Completed</h1>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-	  
-		  
-		  
-		  
-		  
-		  
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="dashboard_graph">
