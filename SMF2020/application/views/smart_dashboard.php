@@ -93,93 +93,125 @@
 
 				
 <!-------------------------------------------------------------------------- Begin RealTime Flot Graph------------------------------------------------------------------------------------------------->
-	<div id="placeholder" class="demo-placeholder"></div>
-    <script type="text/javascript">
-	$(function() {
+	<div id="container" style=" min-width: 310px; height: 400px; margin: 0 auto" >
+			
+			</div>	
+    <script>
+	//Initializing required variables.
+	var data1;
+	var r = 0;
+	var chart;	
+	var u = 0;
+	var h = 0;
+	var k = 0;
+	
+		function requestData() 
+		{
+			//Ajax code for updating the values to chart.
+		$.ajax(
+		{
+			url: '<?php echo base_url();?>smart_controller/Get_chart_data',//live-server-data.php', // Calling the live-server-data.php which will give data for plotting in chart.
+			success: function(point) 
+			{
+				//point contains the data passed from live-server-data.php
+				//alert(point);
+				var series = chart.series[0];//Setting up the series of points to put in the charts.
+			
+				<?php //date_default_timezone_set('Asia/Kolkata');?>;									
+				var x = (new Date()).getTime();//+ 330*60*1000; // Setting up the x co-ordinate of the chart with current time.
+				var y = parseInt(point); // Setting up the y co-ordinate of the chart with point.
+				chart.series[0].addPoint([x, y], true, true); // Adding the [x,y] point to the chart
+				
+				// call it again after one second
+				setTimeout(requestData, 1000); // Setting the delay as 1 second
+ 
+			},
+			cache: false
+		});
 		
-		// We use an inline data source in the example, usually data would
-		// be fetched from a server
-		//alert("Hello....");
-		var data = [],
-			totalPoints = 300;
-
-		function getRandomData() {
-
-			if (data.length > 0)
-				data = data.slice(1);
-
-			// Do a random walk
-
-			while (data.length < totalPoints) {
-
-				var prev = data.length > 0 ? data[data.length - 1] : 50,
-					y = prev + Math.random() * 10 - 5;
-
-				if (y < 0) {
-					y = 0;
-				} else if (y > 100) {
-					y = 100;
+	}
+	
+	$(document).ready(function() 
+	{
+	
+	//Assigning required options for the highcharts.
+	 chart = new Highcharts.Chart(
+		
+		'container', 
+		{
+			chart: 
+			{
+				type: 'areaspline', // Setting the chart type as areaspline
+				
+				animation: Highcharts.svg, // don't animate in old IE
+				marginRight: 10,
+				events: 
+				{
+					load: requestData // Calling the requestData() for loading the data to the chart.
 				}
-
-				data.push(y);
-			}
-
-			// Zip the generated y values with the x values
-
-			var res = [];
-			for (var i = 0; i < data.length; ++i) {
-				res.push([i, data[i]])
-			}
-
-			return res;
-		}
-
-		// Set up the control widget
-
-		var updateInterval = 30;
-		$("#updateInterval").val(updateInterval).change(function () {
-			var v = $(this).val();
-			if (v && !isNaN(+v)) {
-				updateInterval = +v;
-				if (updateInterval < 1) {
-					updateInterval = 1;
-				} else if (updateInterval > 2000) {
-					updateInterval = 2000;
+			},
+			
+			title: {
+				text: 'Live random data'
+			},
+			 credits: {
+                enabled:true,
+				text: 'www.smartfoundry2020.in', //Link Text
+				href: 'http://www.smartfoundry2020.in/' // Link
+                },
+			xAxis: {
+				type: 'datetime',
+				tickPixelInterval:200 
+			},
+			yAxis: {
+				title: {
+					text: 'Tempreature Variation'
+				},
+				plotLines: [{
+					value: 0,
+					width: 1.3,
+					color: '#0099CC'
+				}]
+			},
+			tooltip: {
+				formatter: function () {
+					return '<b>' + this.series.name + '</b><br/>' +
+						Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+						Highcharts.numberFormat(this.y, 2);
 				}
-				$(this).val("" + updateInterval);
-			}
-		});
-
-		var plot = $.plot("#placeholder", [ getRandomData() ], {
-			series: {
-				shadowSize: 0	// Drawing is faster without shadows
 			},
-			yaxis: {
-				min: 0,
-				max: 100
+			legend: {
+				enabled: false
 			},
-			xaxis: {
-				show: true
-			}
+			exporting: {
+				enabled: true
+			},
+			series: [
+			{
+				name: 'Data1',
+				color: '#3399FF',
+				data: (function () 
+				{
+					// generate an array of random data
+					var data = [],
+						time = (new Date()).getTime(),
+						i;
+	
+					for (i = -19; i <= 0; i += 1) 
+					{
+						data.push(
+						{
+							x: time + i * 1000,
+							y: null
+						});
+					}
+					return data;
+				}())
+			}]
 		});
-
-		function update() {
-
-			plot.setData([getRandomData()]);
-
-			// Since the axes don't change, we don't need to call plot.setupGrid()
-
-			plot.draw();
-			setTimeout(update, updateInterval);
-		}
-
-		update();
-
-		// Add the Flot version string to the footer
-
-		//$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
 	});
-
+		
+		
 	</script>
 <!------------------------------------------------------------------------ End RealTime Flot Graph----------------------------------------------------------------------------------------------->
 				

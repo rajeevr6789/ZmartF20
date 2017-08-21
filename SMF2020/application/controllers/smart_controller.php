@@ -5,7 +5,7 @@ class Smart_Controller extends CI_Controller {
 	*/
 	
 	// private $module,$moduleID,$tablestudent,$tableteacher,$tableschool,$endrolled,$tableattend,$tableactivity,$tableslots;
-	 private $module,$smart_login_table,$moduleID,$tablestudent,$tableteacher,$tableschool,$endrolled,$tableattend,$tableactivity,$tableslots,$module_name,$logged_in,$tableclass,$brn_ass,$pass=1234;
+	 private $module,$smart_login_table,$moduleID,$tablestudent,$tableteacher,$tableschool,$endrolled,$tableattend,$tableactivity,$tableslots,$module_name,$logged_in,$tableclass,$brn_ass,$pass=1234,$test_val=10;
 	 
 	function __construct(){		
 		
@@ -23,8 +23,10 @@ class Smart_Controller extends CI_Controller {
         $this->endrolled	=	"tbl_endrolled";
 		$this->admin_tbl	=	'tbl_adminusers';		
 		$this->tablestudent	=	$this->module."_kids";
-		$this->tableclass	=	$this->module."_class";		
-		$this->load->model('smart_model');			
+		$this->tableclass	=	$this->module."_class";	
+		$this->test_val		=	10;	
+		$this->load->model('smart_model');
+					
 	}
 	
 	//------------------------------------------------------------
@@ -75,6 +77,9 @@ class Smart_Controller extends CI_Controller {
 		*@ access admin
 		*@ return view to admin/home page
 	 */
+	 
+	 
+	 
 	 
 	function login_process()
 	{
@@ -171,6 +176,43 @@ class Smart_Controller extends CI_Controller {
 		*@ access admin
 		*@ return view to admin/home page
 	 */
+	 
+	 
+	 function Get_chart_data()
+	 {
+		 $y = $this->test_val;
+		 $y+=10;
+		 //$y+=10;
+		 //$y = mt_rand()/10000000;
+		//echo $y;
+		 echo json_encode($y);
+		 
+	/*	 	// Set the JSON header
+	header("Content-type: text/json");
+	
+	$file = 'C:/Users/Public/Documents/datafile.txt'; // Setting the path of data file.
+	$handle = fopen("C:/Users/Public/Documents/datafile.txt", "r"); // opening the required file from file_open.php file
+
+	$pos = sizeof($handle) - 23;// Setting the position of the file pointer for reading the last updated values in the file.
+	fseek($handle, $pos, SEEK_END);
+
+	$userinfo = 
+	fscanf($handle,"%f\t%f\t%f\t%f\t%f\t%f\t%f\n"); // Read contents of file
+
+	{
+    	list ($a,$b,$c,$d,$e,$f,$g) = $userinfo; // Putting the read datas to corresponding arrays.
+				
+			echo $a; // Passing required data to charts for displaying.
+
+	};
+
+
+	fclose($handle); //closing the required file from file_close.php file*/
+	}
+	 
+	 
+	 
+	 
 	function recover()
 	{ 
 		
@@ -2745,13 +2787,11 @@ function check_email_exists_validation($emailid,$id=0)
 	}
 
 
-
-
-
-
-
-
-
 	
 }
+
+
+
+
+
 ?>

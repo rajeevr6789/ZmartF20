@@ -9,51 +9,55 @@
 
     <title>Smart Dashboard! | </title>
 	<!--Custom-->
-	<link href="<?php echo base_url();?>/assets/css/small_box.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/css/small_box.css" rel="stylesheet">
     <!-- Bootstrap -->
 	
-    <link href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 		
     <!-- Font Awesome -->
-    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 	
     <!-- NProgress -->
-    <link href="<?php echo base_url();?>/assets/css/nprogress.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/nprogress.css" rel="stylesheet">
 	<!-- bootstrap-wysiwyg -->
-    <link href="<?php echo base_url();?>/assets/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
 	
     <!-- iCheck -->
-    <link href="<?php echo base_url();?>/assets/css/green.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link href="<?php echo base_url();?>/assets/css/bootstrap-progressbar-3.3.4.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/bootstrap-progressbar-3.3.4.css" rel="stylesheet">
 	
 	<!-- Select2 -->
-    <link href="<?php echo base_url();?>/assets/css/select2.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/select2.min.css" rel="stylesheet">
     
 	<!-- Switchery -->
-    <link href="<?php echo base_url();?>/assets/css/switchery.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/switchery.min.css" rel="stylesheet">
     
 	<!-- starrr -->
-    <link href="<?php echo base_url();?>/assets/css/starrr.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/starrr.css" rel="stylesheet">
      
     <!-- bootstrap-daterangepicker -->
-    <link href="<?php echo base_url();?>/assets/css/daterangepicker.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/daterangepicker.css" rel="stylesheet">
 	
 	<!-- PNotify -->
-    <link href="<?php echo base_url();?>/assets/css/pnotify.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>/assets/css/pnotify.buttons.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>/assets/css/pnotify.nonblock.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/pnotify.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/pnotify.buttons.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/pnotify.nonblock.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url();?>/assets/css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet">
 	
 	<!--CSS FOR TABLE-->
-	<link href="<?php echo base_url();?>/assets/css/Custom_css.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/css/Custom_css.css" rel="stylesheet">
 	
-	<!-- Custom script -->
-	<script language="javascript" type="text/javascript" src="<?php echo base_url();?>/assets/payloads/dataplot_jsp.jsp"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo base_url();?>/assets/payloads/dataplot_jsp_flot.jsp"></script>
+		<!-- Ajax-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- jQuery -->
+	<script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+		
+	   <script language="javascript" type="text/javascript" src="<?php echo base_url();?>assets/payloads/highcharts.js"></script>
+		<script language="javascript" type="text/javascript" src="<?php echo base_url();?>assets/payloads/exporting.js"></script>
 	
 	
   </head>
@@ -72,7 +76,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url();?>/assets/images/Logo.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url();?>assets/images/Logo.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -174,7 +178,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo base_url();?>/assets/images/Logo.jpg" alt="">Smart User
+                    <img src="<?php echo base_url();?>assets/images/Logo.jpg" alt="">Smart User
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -198,7 +202,7 @@
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
-                        <span class="image"><img src="<?php echo base_url();?>/assets/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="<?php echo base_url();?>assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -210,7 +214,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="<?php echo base_url();?>/assets/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="<?php echo base_url();?>assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -222,7 +226,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="<?php echo base_url();?>/assets/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="<?php echo base_url();?>assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -234,7 +238,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="<?php echo base_url();?>/assets/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="<?php echo base_url();?>assets/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
